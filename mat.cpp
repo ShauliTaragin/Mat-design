@@ -1,5 +1,7 @@
 #include <iostream>
-#include "mat.h"
+#include "mat.hpp"
+#include <string>
+#include <stdexcept>
 
 using namespace std;
 
@@ -11,7 +13,7 @@ using namespace std;
 namespace ariel {
     string mat(int columns, int rows, char symb1, char symb2) {
         if (columns % 2 == 0 || rows % 2 == 0||rows < 1 || columns < 1) {
-            throw "Mat size is always odd ";
+            throw invalid_argument("Mat size is always odd ");
         } else {
             char **matrix = new char *[rows];
             for (int i = 0; i < rows; ++i) {
