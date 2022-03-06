@@ -11,8 +11,6 @@ namespace ariel {
     string mat(int columns, int rows, char symb1, char symb2) {
         if (columns % 2 == 0 || rows % 2 == 0 || rows < 1 || columns < 1) {
             throw invalid_argument("Mat size is always odd ");
-        } else if (rows > 1000 || columns > 1000) {
-            throw invalid_argument("Enter numbers which are smaller then 1000");
         } else {
             char **matrix = new char *[rows];
             for (int i = 0; i < rows; ++i) {
