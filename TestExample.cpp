@@ -4,7 +4,7 @@
  * 
  * IMPORTANT: Please write more tests - the tests here are only for example and are not complete.
  *
- * AUTHORS: <Please write your names here>
+ * AUTHORS: <Shaul Taragin>
  * 
  * Date: 2021-02
  */

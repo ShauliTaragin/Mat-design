@@ -1,3 +1,9 @@
+/**
+ * AUTHORS: Shaul Taragin
+ *
+ * Date: 2022-03
+ */
+
 #include "doctest.h"
 #include "mat.hpp"
 
