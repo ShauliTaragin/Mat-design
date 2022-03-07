@@ -56,6 +56,11 @@ namespace ariel {
                     result += matrix[i][j];
                 }
             }
+            //delete to make sure no memory leaks
+            for (int i = 0; i < rows; ++i){
+                delete [] matrix[i];
+            }
+            delete [] matrix;
             return result;
         }
     }
