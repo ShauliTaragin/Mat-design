@@ -2,6 +2,7 @@
 #include "mat.hpp"
 #include <string>
 #include <stdexcept>
+#include <vector>
 
 using namespace std;
 
@@ -12,10 +13,7 @@ namespace ariel {
         if (columns % 2 == 0 || rows % 2 == 0 || rows < 1 || columns < 1) {
             throw invalid_argument("Mat size is always odd ");
         }
-        char **matrix = new char *[rows];
-        for (int i = 0; i < rows; ++i) {
-            matrix[i] = new char[columns];
-        }
+        vector<vector<char>> matrix( rows, vector<char>( columns ) );
         bool flag = true;
         //I will implement this function by working like an onion i.e. I will create each frame separately
         //starting from external frame until the final center frame.
@@ -55,11 +53,7 @@ namespace ariel {
                 result += matrix[i][j];
             }
         }
-        //delete arrays to make sure no memory leaks
-        for (int i = 0; i < rows; ++i) {
-            delete[] matrix[i];
-        }
-        delete[] matrix;
+        //vectors have been deleted
         return result;
     }
 }
