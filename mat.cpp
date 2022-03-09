@@ -3,6 +3,7 @@
 #include <string>
 #include <stdexcept>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -10,8 +11,13 @@ const int maximum_digit = 1000;
 
 namespace ariel {
     string mat(int columns, int rows, char symb1, char symb2) {
+        vector<char> bad_symbols = {'\n','\r','\t','\0',' '};
         if (columns % 2 == 0 || rows % 2 == 0 || rows < 1 || columns < 1) {
             throw invalid_argument("Mat size is always odd ");
+        }
+        if(find(bad_symbols.begin(), bad_symbols.end(), symb1) != bad_symbols.end()||
+           find(bad_symbols.begin(), bad_symbols.end(), symb2) != bad_symbols.end()){
+            throw invalid_argument("Bad symbol. Choose a regular character ");
         }
         vector<vector<char>> matrix( rows, vector<char>( columns ) );
         bool flag = true;

@@ -169,6 +169,13 @@ TEST_CASE ("Bad input - Even number") {
             CHECK_THROWS(mat(2, 4, '2', '4'));
             CHECK_THROWS(mat(46, 100, '#', '7'));
 }
+TEST_CASE ("Bad input - Bad Symbol") {
+            CHECK_THROWS(mat(13, 11, '\n', '%'));
+            CHECK_THROWS(mat(15, 41, 'a', '\t'));
+            CHECK_THROWS(mat(9, 57, '2', '\0'));
+            CHECK_THROWS(mat(43, 101, ' ', '7'));
+            CHECK_THROWS(mat(141, 55, '\r', '\0'));
+}
 
 
 
